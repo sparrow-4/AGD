@@ -1,21 +1,13 @@
 import React from "react";
 
-import img1 from "../assets/budget1.png";
-import img2 from "../assets/budget2.png";
-import img3 from "../assets/budget3.png";
-import img4 from "../assets/budget4.png";
+import {budgets} from "../constants/index.js";
 
-const budgets = [
-  { img: img1, title: "Over 250k", subtitle: "72000 styles" },
-  { img: img2, title: "100k - 250k", subtitle: "58000 styles" },
-  { img: img3, title: "50k - 100k", subtitle: "34000 styles" },
-  { img: img4, title: "Under 50k", subtitle: "18000 styles" },
-];
+
 
 const ShopOnBudget = () => {
   return (
     <section className="bg-[#1b1b1b] py-16">
-      <div className="max-w-7xl mx-auto px-6 md:px-20">
+      <div className="max-w-8xl mx-auto px-6 md:px-20">
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-3xl font-bodoni font-semibold text-nav">
@@ -27,7 +19,7 @@ const ShopOnBudget = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {budgets.map((item) => (
             <div
               key={item.title}

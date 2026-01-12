@@ -53,8 +53,8 @@ const Hero = () => {
 
       {/* BOTTOM GLASS STRIP */}
       <div className="absolute bottom-0 left-0 w-full z-30">
-        <div className="bg-black/40 backdrop-blur-md">
-          <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-20 py-10">
+        <div className="bg-black/40 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto px-2 md:px-10 lg:px-20 py-3 md:py-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
               {features.map((item) => (
                 <div key={item.title} className="flex flex-col items-center gap-4">

@@ -4,6 +4,12 @@ import Hero from "../components/Hero";
 
 import ShopOnBudget from "../components/ShopOnBudget";
 import NewArrivals from "../components/NewArrivals";
+import GoldPromoBanner from "../components/Banner";
+import TopDemandedItems from "../components/TopDemandedItems";
+import Banner2 from "../components/banner2";
+import Recent from "../components/Recent";
+import Download from "../components/Download";
+import Footer from "../components/Footer";
 
 const Landing = () => {
   return (
@@ -19,6 +25,25 @@ const Landing = () => {
       </section>
       <section>
         <NewArrivals />
+      </section>
+      <section>
+        <GoldPromoBanner />
+      </section>
+      <section>
+        <TopDemandedItems />
+      </section>
+      <section>
+        <Banner2 />
+      </section>
+      <section>
+        <Recent />
+      </section>
+      
+      <section>
+        <Download />
+      </section>
+      <section>
+        <Footer />
       </section>
       
 
