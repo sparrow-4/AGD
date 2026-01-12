@@ -6,10 +6,11 @@ import ShopOnBudget from "../components/ShopOnBudget";
 import NewArrivals from "../components/NewArrivals";
 import GoldPromoBanner from "../components/Banner";
 import TopDemandedItems from "../components/TopDemandedItems";
-import Banner2 from "../components/banner2";
+
 import Recent from "../components/Recent";
 import Download from "../components/Download";
 import Footer from "../components/Footer";
+import Man from "../components/Man";
 
 const Landing = () => {
   return (
@@ -33,7 +34,7 @@ const Landing = () => {
         <TopDemandedItems />
       </section>
       <section>
-        <Banner2 />
+        <Man />
       </section>
       <section>
         <Recent />

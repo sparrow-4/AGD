@@ -1,7 +1,7 @@
 import React from 'react'
 import Man from '../assets/man.png';
 
-const Banner2 = () => {
+const Man = () => {
   return (
     <section className="bg-[#1b1b1b] py-3">
       <div className="max-w-8xl mx-auto px-6 md:px-20">
@@ -16,4 +16,4 @@ const Banner2 = () => {
   )
 }
 
-export default Banner2
+export default Man
