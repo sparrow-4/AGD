@@ -10,7 +10,7 @@ import TopDemandedItems from "../components/TopDemandedItems";
 import Recent from "../components/Recent";
 import Download from "../components/Download";
 import Footer from "../components/Footer";
-import Man from "../components/Man";
+import NewBanner from "../components/NewBanner";
 
 const Landing = () => {
   return (
@@ -34,7 +34,7 @@ const Landing = () => {
         <TopDemandedItems />
       </section>
       <section>
-        <Man />
+        <NewBanner />
       </section>
       <section>
         <Recent />
