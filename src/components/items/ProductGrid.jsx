@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { items } from "../../constants";
 
-const ProductGrid = () => {
+const ProductGrid = ({ trending }) => {
   const [favorites, setFavorites] = useState(new Set());
 
   const toggleFavorite = (id) => {
@@ -12,9 +11,17 @@ const ProductGrid = () => {
     });
   };
 
+  if (!trending || trending.length === 0) {
+    return (
+      <p className="text-white/60 text-sm">
+        No products found.
+      </p>
+    );
+  }
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {items.map((item) => (
+      {trending.map((item) => (
         <div
           key={item.id}
           className="
@@ -31,6 +38,7 @@ const ProductGrid = () => {
         >
           {/* Wishlist */}
           <button
+            type="button"
             onClick={() => toggleFavorite(item.id)}
             className="
               absolute top-4 right-4 z-10

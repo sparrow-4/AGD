@@ -42,14 +42,14 @@ const Filter = ({ filters, setFilters }) => {
   return (
     <aside
       className="
-        
-        w-[344px]
+        w-full
+        lg:w-[344px]
         bg-[#4f5136]
         rounded-[16px]
         p-4
         sticky
         top-2
-        h-220
+        h-[220vh]
         overflow-y-auto
         text-[#F0F0D6]
       "
@@ -67,7 +67,7 @@ const Filter = ({ filters, setFilters }) => {
       </p>
       {renderList(CATEGORY_FILTERS, "category")}
 
-      <hr className="border-white/20 my-4" />
+      <hr className="border-white/20 my-6" />
 
       {/* MATERIAL */}
       <p className="text-[13px] font-medium mb-3">
@@ -75,7 +75,7 @@ const Filter = ({ filters, setFilters }) => {
       </p>
       {renderList(MATERIAL_FILTERS, "material")}
 
-      <hr className="border-white/20 my-4" />
+      <hr className="border-white/20 my-6" />
 
       {/* OCCASION */}
       <p className="text-[13px] font-medium mb-3">
