@@ -24,14 +24,14 @@ const NewArrivals = () => {
         {/* Header */}
         <div className="flex items-end justify-between mb-10">
           <div>
-            <h2 onClick={() => navigate("/items")} className="text-4xl cursor-pointer font-playfair text-white">
+            <h2 onClick={() => navigate("/Trending")} className="text-4xl cursor-pointer font-playfair text-white">
               New Arrivals
             </h2>
             <p className="text-sm text-gray-400 mt-1">
               234 New items added
             </p>
           </div>
-          <button onClick={() => navigate("/items")} className="text-sm text-white hover:underline">
+          <button onClick={() => navigate("/Trending")} className="text-sm text-white hover:underline">
             See all
           </button>
         </div>

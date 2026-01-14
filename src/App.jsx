@@ -10,7 +10,7 @@ const App = () => {
       <Route path="/" element={<div className='bg-[#1b1b1b]'>
       <Landing />
     </div>} />
-        <Route path="/items" element={<div className='bg-[#1b1b1b]'>
+        <Route path="/Trending" element={<div className='bg-[#1b1b1b]'>
         <Seeall />
       </div>} />
     </Routes>
