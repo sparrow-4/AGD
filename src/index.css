@@ -52,3 +52,45 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.heart {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  transform: rotate(-45deg);
+  background: red;
+  animation: pulse 0.8s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -9px;
+  left: 0;
+}
+
+.heart::after {
+  left: 9px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+}
+

@@ -14,14 +14,17 @@ import Display from "../components/Display";
 
 const Landing = () => {
   return (
-    <main className="w-full overflow-x-hidden">
-      <Header />
-
-      <section>
+   <div>
+    <Header />
+    <section>
         <Hero />
       </section>
+     <main className="w-full overflow-x-hidden max-w-400 mx-auto">
+      
 
-      <section >
+      
+
+      <section>
         <ShopOnBudget />
       </section>
       <section>
@@ -43,13 +46,15 @@ const Landing = () => {
       <section>
         <Download />
       </section>
-      <section>
-        <Footer />
-      </section>
+      
       
 
      
     </main>
+    <section>
+        <Footer />
+      </section>
+   </div>
   );
 };
 

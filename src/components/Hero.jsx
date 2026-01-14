@@ -16,39 +16,43 @@ const features = [
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[100vh] min-h-[520px] overflow-hidden">
+    <section className="relative w-full h-[120vh] max-h-full overflow-hidden">
       {/* BACKGROUND IMAGE DIV */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 h-full w-full"
         style={{ backgroundImage: `url(${bgImage})` }}
       />
 
       {/* LEFT GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/30 to-transparent" />
 
-      {/* TEXT (BEHIND WOMAN) */}
-     <div className="relative z-10 h-full flex items-center">
-  <div className="w-full px-6 md:px-20 lg:px-28">
-    <div className="max-w-2xl text-white">
-      <h1 className="text-3xl md:text-5xl font-bold font-solway leading-tight mb-4">
-        The World First Jewelry <br />
-        Commerce Platform <br />
-        The Future Tale
-      </h1>
-      <p className="text-sm md:text-base text-gray-200">
-        Discover the future of jewelry shopping with our <br /> innovative
-        e-commerce platform, showcasing exceptional<br /> talent and unique
-        designs.
-      </p>
-    </div>
-  </div>
-</div>
+            {/* TEXT (BEHIND WOMAN) */}
+          <div className="relative
+  h-full
+  flex items-center
+  z-0
+  min-[1601px]:z-50">
+        <div className="w-full max-w-400 mx-auto px-6 md:px-20 lg:px-28">
+          <div className="max-w-2xl text-white">
+            <h1 className="text-3xl md:text-5xl font-bold font-solway leading-tight mb-4">
+              The World First Jewelry <br />
+              Commerce Platform <br />
+              The Future Tale
+            </h1>
+            <p className="text-sm md:text-base text-gray-200">
+              Discover the future of jewelry shopping with our <br /> innovative
+              e-commerce platform, showcasing exceptional<br /> talent and unique
+              designs.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* WOMAN FOREGROUND IMAGE */}
       <img
         src={woman}
         alt="Model"
-        className="absolute right-0 -bottom-73 h-[180vh] z-20 object-contain pointer-events-none hidden lg:block"
+        className="absolute right-0 bottom-0 w-1600 h-207.5 min-h-full  z-20 object-cover pointer-events-none hidden lg:block  min-[1601px]:hidden"
       />
 
       {/* BOTTOM GLASS STRIP */}

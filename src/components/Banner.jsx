@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import bannerImg from "../assets/gold.png";
 
 const GoldPromoBanner = () => {
+   const navigate = useNavigate();
   return (
     <section className="bg-[#1b1b1b] py-16">
       <div className="max-w-8xl mx-auto px-6 md:px-20">
@@ -14,9 +16,10 @@ const GoldPromoBanner = () => {
           {/* MOBILE / TABLET LAYOUT */}
           <div className="lg:hidden p-6">
             <img
+            onClick={()=> navigate('/')}
               src={bannerImg}
               alt="Gold Jewellery"
-              className="w-full max-h-[260px] object-contain mb-6"
+              className="w-full max-h-65 object-contain mb-6"
             />
 
             <h2 className="text-2xl font-bodoni font-extrabold text-white mb-3">

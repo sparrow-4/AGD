@@ -3,9 +3,12 @@ import heart from "../assets/heart.svg";
 import heartFill from "../assets/heart-fill.svg";
 
 import {products} from "../constants/index.js";
+import { useNavigate } from "react-router-dom";
+
 
 const NewArrivals = () => {
   const [favorites, setFavorites] = useState(new Set());
+  const navigate = useNavigate();
 
   const toggleFavorite = (id) => {
     setFavorites((prev) => {
@@ -21,14 +24,14 @@ const NewArrivals = () => {
         {/* Header */}
         <div className="flex items-end justify-between mb-10">
           <div>
-            <h2 className="text-4xl font-playfair text-white">
+            <h2 onClick={() => navigate("/items")} className="text-4xl cursor-pointer font-playfair text-white">
               New Arrivals
             </h2>
             <p className="text-sm text-gray-400 mt-1">
               234 New items added
             </p>
           </div>
-          <button className="text-sm text-white hover:underline">
+          <button onClick={() => navigate("/items")} className="text-sm text-white hover:underline">
             See all
           </button>
         </div>
@@ -41,20 +44,19 @@ const NewArrivals = () => {
             return (
               <div
                 key={item.id}
-                className="bg-crd rounded-xl p-3 sm:p-4 relative"
+                className="bg-crd rounded-xl p-3 sm:p-4 relative bg-linear-to-tr from-black via-nav/5 to-black"
               >
                 {/* Wishlist */}
-                <button
-                  onClick={() => toggleFavorite(item.id)}
-                  className="absolute top-4 right-4 z-10"
-                  aria-label="Toggle favorite"
-                >
-                  <img
-                    src={isFav ? heartFill : heart}
-                    alt="wishlist"
-                    className="h-5"
-                  />
-                </button>
+          <button
+  onClick={() => toggleFavorite(item.id)}
+  className="absolute top-4 right-4 z-10"
+>
+  {isFav ? <div className="heart" /> : (
+    <img src={heart} alt="wishlist" className="h-5" />
+  )}
+</button>
+
+
 
                 {/* Image */}
                 <div className="aspect-square flex items-center justify-center mb-4">

@@ -30,6 +30,7 @@ const TopDemandedItems = () => {
                 hover:border-lime-400/60
                 transition
                 flex flex-col
+                bg-linear-to-tr from-black via-nav/5 to-black
                 min-h-[260px] md:min-h-[360px]
 
               "

@@ -28,18 +28,97 @@ const Header = () => {
   const [menuopen, setMenuOpen] = useState(false);
   return (
     <header className="bg-nav">
-      {/* TOP BAR */}
-      <div className="flex items-center justify-between px-4 md:px-10 py-4 gap-4">
-        {/* Logo */}
-        <img
-          src={logo}
-          alt="Logo"
-          className="h-8 md:h-15 shrink-0 cursor-pointer"
-        />
+      <div className="max-w-400 mx-auto">
+        {/* TOP BAR */}
+        <div className="flex items-center justify-between px-4 md:px-10 py-4 gap-4">
+          {/* Logo */}
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-8 md:h-15 shrink-0 cursor-pointer"
+          />
 
-        <div className="flex items-center flex-1 justify-end gap-6 md:gap-10   ">
-          {/* Desktop Search */}
-          <div className="relative flex-1 max-w-[520px] hidden sm:block">
+          <div className="flex items-center flex-1 justify-end gap-6 md:gap-10   ">
+            {/* Desktop Search */}
+            <div className="relative flex-1 max-w-[520px] hidden sm:block">
+              <input
+                type="text"
+                placeholder="Search Here"
+                className="w-full pl-10 pr-4 py-2 bg-white text-black rounded-md outline-none border border-black"
+              />
+              <img
+                src={srch}
+                alt="search"
+                className="absolute left-3 top-1/2 -translate-y-1/2 h-5"
+              />
+            </div>
+
+            {/* Icons */}
+            <div className="flex items-center gap-4 md:gap-6 shrink-0">
+              <img
+                src={bell}
+                alt="bell"
+                className="h-5 md:h-6 cursor-pointer"
+              />
+              <img src={fav} alt="fav" className="h-5 md:h-6 cursor-pointer" />
+              <img
+                src={cart}
+                alt="cart"
+                className="h-5 md:h-6 cursor-pointer"
+              />
+              <img
+                src={user}
+                alt="user"
+                className="h-5 md:h-6 cursor-pointer"
+              />
+              <RiMenu2Line
+                className="text-black text-2xl cursor-pointer  sm:hidden"
+                onClick={() => setMenuOpen(true)}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* mobile side bar */}
+        <div
+          className={`fixed inset-0 bg-black/40 z-40 transition-opacity ${
+            menuopen ? "opacity-100 visible" : "opacity-0 invisible"
+          } sm:hidden`}
+          onClick={() => setMenuOpen(false)}
+        ></div>
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-nav z-50 transform transition-transform duration-300 sm:hidden ${
+            menuopen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="p-4 border-b border-black flex justify-between items-center">
+            <span className="font-semibold text-lg">Categories</span>
+            <button className="text-xl" onClick={() => setMenuOpen(false)}>
+              ✕
+            </button>
+          </div>
+          <ul className="p-4 space-y-4">
+            {categories.map((item) => (
+              <li
+                key={item}
+                className="
+                  text-sm font-medium cursor-pointer
+                  px-4 py-2
+                  rounded-md
+                  hover:text-white hover:bg-bgclr
+                  transition-all duration-300 ease-in-out
+                "
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Mobile Search */}
+        <div className="px-4 pb-3 sm:hidden">
+          <div className="relative">
             <input
               type="text"
               placeholder="Search Here"
@@ -51,87 +130,22 @@ const Header = () => {
               className="absolute left-3 top-1/2 -translate-y-1/2 h-5"
             />
           </div>
-
-          {/* Icons */}
-          <div className="flex items-center gap-4 md:gap-6 shrink-0">
-            <img src={bell} alt="bell" className="h-5 md:h-6 cursor-pointer" />
-            <img src={fav} alt="fav" className="h-5 md:h-6 cursor-pointer" />
-            <img src={cart} alt="cart" className="h-5 md:h-6 cursor-pointer" />
-            <img src={user} alt="user" className="h-5 md:h-6 cursor-pointer" />
-            <RiMenu2Line
-              className="text-black text-2xl cursor-pointer  sm:hidden"
-              onClick={() => setMenuOpen(true)}
-            />
-          </div>
         </div>
-      </div>
 
-      {/* mobile side bar */}
-      <div
-        className={`fixed inset-0 bg-black/40 z-40 transition-opacity ${
-          menuopen ? "opacity-100 visible" : "opacity-0 invisible"
-        } sm:hidden`}
-        onClick={() => setMenuOpen(false)}
-      ></div>
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-nav z-50 transform transition-transform duration-300 sm:hidden ${
-          menuopen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="p-4 border-b border-black flex justify-between items-center">
-          <span className="font-semibold text-lg">Categories</span>
-          <button className="text-xl" onClick={() => setMenuOpen(false)}>
-            ✕
-          </button>
-        </div>
-        <ul className="p-4 space-y-4">
-          {categories.map((item) => (
-            <li
-              key={item}
-              className="
-  text-sm font-medium cursor-pointer
-  px-4 py-2
-  rounded-md
-  hover:text-white hover:bg-bgclr
-  transition-all duration-300 ease-in-out
-"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
+        {/* CATEGORY BAR */}
+        <nav className="px-4 md:px-10 border-b border-black overflow-x-auto no-scrollbar hidden md:block">
+          <ul className="flex justify-evenly gap-6 text-sm text-black font-medium whitespace-nowrap">
+            {categories.map((item) => (
+              <li
+                key={item}
+                className="pb-3 cursor-pointer border-b-5 border-transparent hover:border-black transition-all"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-
-      {/* Mobile Search */}
-      <div className="px-4 pb-3 sm:hidden">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search Here"
-            className="w-full pl-10 pr-4 py-2 bg-white text-black rounded-md outline-none border border-black"
-          />
-          <img
-            src={srch}
-            alt="search"
-            className="absolute left-3 top-1/2 -translate-y-1/2 h-5"
-          />
-        </div>
-      </div>
-
-      {/* CATEGORY BAR */}
-      <nav className="px-4 md:px-10 border-b border-black overflow-x-auto no-scrollbar hidden md:block">
-        <ul className="flex justify-evenly gap-6 text-sm text-black font-medium whitespace-nowrap">
-          {categories.map((item) => (
-            <li
-              key={item}
-              className="pb-3 cursor-pointer border-b-5 border-transparent hover:border-black transition-all"
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      </nav>
     </header>
   );
 };

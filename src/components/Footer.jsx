@@ -1,7 +1,9 @@
 import React from "react";
 import Logo from "../assets/logoo.svg"; 
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+   const navigate = useNavigate();
   return (
     <footer className="bg-[#4f570e] text-[#F0F0D6]">
       <div className="max-w-7xl mx-auto px-6 md:px-20 py-16">
@@ -10,12 +12,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* BRAND */}
-          <div className="lg:col-span-1 flex items-center gap-3">
+          <div onClick={()=> {navigate('/');
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }} className="lg:col-span-1 flex items-center gap-3 cursor-pointer">
   {/* LOGO ICON */}
   <img
     src={Logo}
+    
     alt="AGD Logo"
-    className="h-10 md:h-12 object-contain"
+    className="h-10 md:h-12 object-contain "
   />
 
   {/* LOGO TEXT */}
@@ -69,7 +74,7 @@ const Footer = () => {
           </div>
 
           {/* HELP */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-end gap-8">
             <h4 className="font-semibold">
               Questions? Comments? Concerns?
             </h4>

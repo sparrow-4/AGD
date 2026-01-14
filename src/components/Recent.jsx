@@ -36,12 +36,15 @@ const Recent = () => {
     transition
     flex flex-col
     min-h-[260px] md:min-h-[360px]
+    bg-linear-to-tr from-black via-nav/5 to-black  
 
     w-[45vw] sm:w-[50vw] md:w-[180px] lg:w-[220px]
     flex-shrink-0
+    
   "
 >
-  {/* IMAGE */}
+  <div cl>
+    {/* IMAGE */}
   <div className="h-[140px] md:h-[190px] flex items-center justify-center mb-4">
     <img
       src={item.image}
@@ -61,6 +64,7 @@ const Recent = () => {
         ₹{item.oldPrice}
       </span>
     </div>
+  </div>
   </div>
 </div>
 
